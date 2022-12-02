@@ -25,7 +25,9 @@ const styles = StyleSheet.create({
     },
 
     container_TERTIARY:{
-        color: 'grey'
+        color: 'grey',
+        borderColor: 'black',
+        borderWidth: 1,
     },
 
     text: {

@@ -3,21 +3,24 @@ import {View, Text, Image, StyleSheet} from  'react-native';
 import LoginIcon from '../../../assets/images/LoginIcon.png'
 import CostumButton from '../../components/CostumButton';
 import CostumInput from '../../components/CostumInput';
+import { useNavigation }  from '@react-navigation/native';
 
 
-const SignInScreen = () => {
+const LogInScreen = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigation = useNavigation();
 
     const onSignInPress = () => {
-        console.warn("sign in")
+        // validasi Email
+        navigation.navigate('HomeScreen');
     }
 
     const onForgotPassword = () => {
-        console.warn("Forgot Password")
+        navigation.navigate('Forgot');
     }
     const onSignUp = () => {
-        console.warn("SignUp")
+        navigation.navigate('SignUp');
     }
     return (
         <View style={styles.root}>
@@ -39,7 +42,7 @@ const SignInScreen = () => {
             secureTextEntry 
             />
 
-            <CostumButton text="Sign In" onPress={onSignInPress} />
+            <CostumButton text="Log In" onPress={onSignInPress} />
 
             <CostumButton 
             text="Forget Password" 
@@ -69,4 +72,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default SignInScreen;
+export default LogInScreen;

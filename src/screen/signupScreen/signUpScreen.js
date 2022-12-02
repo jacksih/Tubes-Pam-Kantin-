@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {View, Text, Image, StyleSheet} from  'react-native';
-import LoginIcon from '../../../assets/images/LoginIcon.png'
+import {View, Text, StyleSheet} from  'react-native';
 import CostumButton from '../../components/CostumButton';
 import CostumInput from '../../components/CostumInput';
+import { useNavigation }  from '@react-navigation/native';
 
 const SignUpScreen = () => {
     const [email, setEmail] = useState('');
@@ -11,22 +11,22 @@ const SignUpScreen = () => {
     const [password, setPassword] = useState('');
     const [repassword, setRePassword] = useState('');
 
-    const onSignInPress = () => {
-        console.warn("sign in")
+    const navigation = useNavigation();
+    
+
+    const onSignUpPress = () => {
+        navigation.navigate('Confirm');
     }
 
     const onForgotPassword = () => {
         console.warn("Sign Up by google")
     }
     const onSignIn = () => {
-        console.warn("SignIn")
+        navigation.navigate('SignIn');
     }
     return (
         <View style={styles.root}>
-            <Image 
-            source={LoginIcon} 
-            style={styles.LoginIcon} 
-            />
+            <Text style={styles.title}>Create An Acount</Text>
 
             <CostumInput 
             placeholder="email" 
@@ -58,11 +58,11 @@ const SignUpScreen = () => {
             secureTextEntry 
             />
 
-            <CostumButton text="Sign Up" onPress={onSignInPress} />
+            <CostumButton text="Daftar" onPress={onSignUpPress} />
 
             <CostumButton 
             text="Sign in Google" 
-            onPress={onForgotPassword} 
+            onPress={onForgotPassword}
             type="TERTIARY" 
             />
 
@@ -73,7 +73,6 @@ const SignUpScreen = () => {
             />
         </View>
     )
-
 }
 
 const styles = StyleSheet.create({
@@ -82,9 +81,12 @@ const styles = StyleSheet.create({
         padding : 20,
         backgroundColor: '#F9FBFC'
     },
-    LoginIcon:{
-        width : 150,
-        height : 150
+    title:{
+        fontSize: 24,
+        fontWeight: 'bold',
+        margin: 20,
+        marginTop: 40,
+        color: '#051C20'
     }
 })
 
