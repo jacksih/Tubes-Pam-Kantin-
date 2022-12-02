@@ -1,14 +1,14 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
-// import Navigation from './src/navigation';
-import Menu from './src/screen/Menu/menu';
+import Navigation from './src/navigation';
+// import Menu from './src/screen/Menu/menu';
 
 
 export default function App() {
   return (
     <SafeAreaView style  = {styles.container}>
-      {/* <Navigation /> */}
-      <Menu />
+      <Navigation />
+      {/* <Menu /> */}
     </SafeAreaView>
   );
 }
