@@ -1,8 +1,10 @@
 import * as React from 'react';
 import { Text, View, StyleSheet,Image,TouchableOpacity,TextInput } from 'react-native';
 import Constants from 'expo-constants';
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { NavigationContainer } from '@react-navigation/native';
 
-const Pesan2 = () => {
+const Pesan2 = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.atas}>
@@ -26,9 +28,9 @@ const Pesan2 = () => {
       </View>
       <View style={styles.minuman}>
       </View>
-      <TouchableOpacity style={styles.pesanan}>
-      <Text style={styles.pesan}>Pesan</Text>
-      </TouchableOpacity>
+      <TouchableOpacity style={styles.pesanan} onPress={() =>  navigation.navigate('Deliveri')}>
+          <Text style={styles.pesan}>Pesan</Text>
+        </TouchableOpacity>
     </View>
   );
 }

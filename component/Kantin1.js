@@ -1,17 +1,19 @@
 import * as React from 'react';
-import { Text, View, StyleSheet,Image,TouchableOpacity,TextInput, ScrollView } from 'react-native';
+import { Text, View, StyleSheet, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-const Pesan1 = () => {
+const Pesan1 = ({navigation}) => {
   return (
-      <View style={styles.container}>
-        <View style={styles.atas}>
+    <View style={styles.container}>
+      <View style={styles.atas}>
         <Text style={styles.teks}>Kantin 1 Itera</Text>
-        </View>
-        <ScrollView>
+      </View>
+      <ScrollView>
         <Text style={styles.makan}>Makanan</Text>
         <View style={styles.makanan}>
-        <Text>Risol</Text>
+          <Text>Risol</Text>
         </View>
         <View style={styles.makanan}>
         </View>
@@ -23,7 +25,7 @@ const Pesan1 = () => {
         </View>
         <Text style={styles.minum}>Minuman</Text>
         <View style={styles.minuman}>
-        <Text>Aqua Botol</Text>
+          <Text>Aqua Botol</Text>
         </View>
         <View style={styles.minuman}>
         </View>
@@ -33,11 +35,11 @@ const Pesan1 = () => {
         </View>
         <View style={styles.minuman}>
         </View>
-        <TouchableOpacity style={styles.pesanan}>
-        <Text style={styles.pesan}>Pesan</Text>
+        <TouchableOpacity style={styles.pesanan} onPress={() =>  navigation.navigate('PickUp')}>
+          <Text style={styles.pesan}>Pesan</Text>
         </TouchableOpacity>
-        </ScrollView>
-      </View>
+      </ScrollView>
+    </View>
   );
 }
 
@@ -65,15 +67,15 @@ const styles = StyleSheet.create({
     backgroundColor: "#99d1d8",
     width: '95%',
     height: 60,
-    justifyContent:'center',
+    justifyContent: 'center',
     position: 'relative',
-    top:20,
-    marginTop:15 ,
-    alignSelf:'center'  
+    top: 20,
+    marginTop: 15,
+    alignSelf: 'center'
   },
   makan: {
     position: 'relative',
-    top:20,
+    top: 20,
     left: 10
   },
   minuman: {
@@ -81,26 +83,26 @@ const styles = StyleSheet.create({
     backgroundColor: "#99d1d8",
     width: '95%',
     height: 60,
-    justifyContent:'center',
+    justifyContent: 'center',
     position: 'relative',
-    top:20,
-    marginTop:15,
-    alignSelf:'center'   
+    top: 20,
+    marginTop: 15,
+    alignSelf: 'center'
   },
   minum: {
     position: 'relative',
-    top:20,
+    top: 20,
     left: 10,
-    marginTop:20
+    marginTop: 20
   },
   pesanan: {
     alignItems: "center",
     backgroundColor: "#875749",
     width: '95%',
     height: 40,
-    alignSelf:'center',
-    justifyContent:'center',
-    marginTop:100
+    alignSelf: 'center',
+    justifyContent: 'center',
+    marginTop: 100
   },
   pesan: {
     color: '#ecf0f1'
