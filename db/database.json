@@ -1,0 +1,27 @@
+{
+  "Users": [
+    {
+      "id": 1,
+      "nama": "jack",
+      "password": "bujang"
+    },
+    {
+      "nama": "bujang",
+      "password": "henag",
+      "id": 2
+    },
+    {
+      "nama": "kelompok te",
+      "password": "bujangenam ma",
+      "id": 3
+    },
+    {
+      "nama": "olo",
+      "password": "ageee",
+      "id": 4
+    }
+  ],
+  "menuMakanan": [
+    
+  ]
+}

@@ -1,8 +1,10 @@
 import { View, Text, StyleSheet } from 'react-native'
-import React from 'react'
+import React, {useState} from 'react'
 import MenuButton from '../../button/menuButton'
 
+
 const Menu = () => {
+    
     return (
         <View style={styles.container}>
             <View style={styles.atas} >

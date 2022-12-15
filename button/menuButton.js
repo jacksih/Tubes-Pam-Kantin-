@@ -1,32 +1,51 @@
-import { View, Text, StyleSheet, Image } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import React, { useEffect, useState } from 'react'
+import Axios from 'axios';
+import { collection, getDocs } from "firebase/firestore";
+import db from '../firebase'
 
 const MenuButton = () => {
+    const [nama, setNama] = useState('');
+    const [gambar, setGambar] = useState('');
+    const [harga, setHarga] = useState('');
+    // const [users, setUsers] = useState([]);
+
+    // const Ambil = async() => {
+        
+    // }
+
+        const querySnapshot =  getDocs(collection(db, "makanan"));
+        querySnapshot.forEach((doc) => {
+            console.log(`${doc.id} => ${doc.data()}`);
+        });
+
+
+
     return (
-        <View style={styles.container}>
+        <TouchableOpacity style={styles.container}>
             <View style={styles.gambar}>
                 <Image
                     style={styles.image}
-                    source={require('../assets/gambar/PickUp.png')}
+                    source={{uri: {gambar}}}
                 />
             </View>
             <View style={styles.keterangan}>
                 <View style={styles.text}>
-                    <Text >Nama</Text>
+                    <Text >{nama}</Text>
 
                 </View>
             </View>
             <View style={styles.ganti}>
-                <Text style={styles.text}>Harga</Text>
+                <Text style={styles.text}>Rp {harga}.00,-</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
-        margin: 5,
+        margin: 10,
         padding: 10
     },
     gambar: {
@@ -59,7 +78,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#99D1D8',
         textAlign: 'center',
         // alignItems: 'center',
-    // justifyContent: 'center',
+        // justifyContent: 'center',
     }
 })
 export default MenuButton

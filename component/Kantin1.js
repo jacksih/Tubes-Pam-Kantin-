@@ -3,6 +3,7 @@ import { Text, View, StyleSheet, Image, TouchableOpacity, TextInput, ScrollView 
 import Constants from 'expo-constants';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import MenuButton from '../button/menuButton';
 
 const Pesan1 = ({navigation}) => {
   return (
@@ -12,6 +13,7 @@ const Pesan1 = ({navigation}) => {
       </View>
       <ScrollView>
         <Text style={styles.makan}>Makanan</Text>
+        <MenuButton />
         <View style={styles.makanan}>
           <Text>Risol</Text>
         </View>
