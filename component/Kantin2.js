@@ -3,6 +3,91 @@ import { Text, View, StyleSheet,Image,TouchableOpacity,TextInput } from 'react-n
 import Constants from 'expo-constants';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native';
+const DATA = [
+  {
+    title: 'Makanan',
+    data: [
+      {
+        id: "1",
+        text: "Chitato Lite",
+        harga: 'Rp.3000',
+        isChecked: false,
+	      gambar : require('./assets/gambar/ChitatoLite.jpg')
+      },
+      {
+        id: "2",
+        text: "Oreo",
+        harga: 'Rp.3000',
+        isChecked: false,
+	      gambar : require('./assets/gambar/Oreo.jpg')
+      },
+
+      {
+        id: "3",
+        text: "Sukro",
+        harga: 'Rp.7000',
+        isChecked: false,
+	      gambar : require('./assets/gambar/Sukro.jpg')
+      },
+      {
+        id: "4",
+        text: "Nabati Richoco Wafer",
+        harga: 'Rp.7000',
+        isChecked: false,
+	      gambar : require('./assets/gambar/richoco.jpg')
+      },
+      {
+        id: "5",
+        text: "Nabati Richeese Wafer",
+        harga: 'Rp.7000',
+        isChecked: false,
+	      gambar : require('./assets/gambar/richeese.jpg')
+      },
+    ],
+  },
+  {
+    title: 'Minuman',
+    data: [
+      {
+        id: "6",
+        text: "Nu Green Tea",
+        harga: 'Rp.4000',
+        isChecked: false,
+	      gambar : require('./assets/gambar/greentea.jpg')
+      },
+      {
+        id: "7",
+        text: "Teh Pucuk Harum",
+        harga: 'Rp.4000',
+        isChecked: false,
+	      gambar : require('./assets/gambar/TehPucukHarum.jpg')
+      },
+
+      {
+        id: "8",
+        text: "Susu UHT Chocolate",
+        harga: 'Rp.6000',
+        isChecked: false,
+	      gambar : require('./assets/gambar/chocolate.jpg')
+      },
+      {
+        id: "9",
+        text: "Susu UHT Strawberry",
+        harga: 'Rp.6000',
+        isChecked: false,
+	      gambar : require('./assets/gambar/strawberry.jpg')
+      },
+      {
+        id: "10",
+        text: "Susu UHT Full Cream",
+        harga: 'Rp.6000',
+        isChecked: false,
+	      gambar : require('./assets/gambar/fullcream.jpg')
+      },
+    ],
+  }
+];
+
 
 const Pesan2 = ({navigation}) => {
   return (
@@ -12,22 +97,17 @@ const Pesan2 = ({navigation}) => {
       Kantin 2 Itera
       </Text>
       </View>
-      <Text style={styles.makan}>Makanan</Text>
-      <View style={styles.makanan}>
-      <Text>
-      Mie Goreng
-      </Text>
-      </View>
-      <View style={styles.makanan}>
-      </View>
-      <Text style={styles.minum}>Minuman</Text>
-      <View style={styles.minuman}>
-      <Text>
-      Aqua Gelas
-      </Text>
-      </View>
-      <View style={styles.minuman}>
-      </View>
+      <ScrollView style={styles.scrolling}>
+        <SectionList
+        sections={DATA}
+        renderItem={renderItem}
+        renderSectionHeader={({section})=>(
+          <Text style={styles.makan}>{section.title}</Text>
+        )}
+        keyExtractor={item=>item.id}
+        extraData={selectedId}
+        />
+      </ScrollView>
       <TouchableOpacity style={styles.pesanan} onPress={() =>  navigation.navigate('Deliveri')}>
           <Text style={styles.pesan}>Pesan</Text>
         </TouchableOpacity>
