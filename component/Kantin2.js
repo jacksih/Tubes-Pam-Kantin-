@@ -11,37 +11,32 @@ const DATA = [
         id: "1",
         text: "Chitato Lite",
         harga: 'Rp.3000',
-        isChecked: false,
-	gambar : require('./assets/gambar/ChitatoLite.jpg')
+	      gambar : require('../assets/gambar/ChitatoLite.jpg') 
       },
       {
         id: "2",
         text: "Oreo",
         harga: 'Rp.3000',
-        isChecked: false,
-	gambar : require('./assets/gambar/Oreo.jpg')
+	      gambar : require('../assets/gambar/Oreo.jpg')
       },
 
       {
         id: "3",
         text: "Sukro",
         harga: 'Rp.7000',
-        isChecked: false,
-	gambar : require('./assets/gambar/Sukro.jpg')
+	      gambar : require('../assets/gambar/Sukro.jpg')
       },
       {
         id: "4",
         text: "Nabati Richoco Wafer",
         harga: 'Rp.7000',
-        isChecked: false,
-	gambar : require('./assets/gambar/richoco.jpg')
+	      gambar : require('../assets/gambar/richoco.jpg')
       },
       {
         id: "5",
         text: "Nabati Richeese Wafer",
         harga: 'Rp.7000',
-        isChecked: false,
-	gambar : require('./assets/gambar/richeese.jpg')
+	      gambar : require('../assets/gambar/richeese.jpg')
       },
     ],
   },
@@ -52,44 +47,64 @@ const DATA = [
         id: "6",
         text: "Nu Green Tea",
         harga: 'Rp.4000',
-        isChecked: false,
-	gambar : require('./assets/gambar/greentea.jpg')
+  	    gambar : require('../assets/gambar/greentea.jpg')
       },
       {
         id: "7",
         text: "Teh Pucuk Harum",
         harga: 'Rp.4000',
-        isChecked: false,
-	gambar : require('./assets/gambar/TehPucukHarum.jpg')
+	      gambar : require('../assets/gambar/TehPucukHarum.jpg')
       },
 
       {
         id: "8",
         text: "Susu UHT Chocolate",
         harga: 'Rp.6000',
-        isChecked: false,
-	gambar : require('./assets/gambar/chocolate.jpg')
+	      gambar : require('../assets/gambar/chocolate.jpg')
       },
       {
         id: "9",
         text: "Susu UHT Strawberry",
         harga: 'Rp.6000',
-        isChecked: false,
-	gambar : require('./assets/gambar/strawberry.jpg')
+	      gambar : require('../assets/gambar/strawberry.jpg')
       },
       {
         id: "10",
         text: "Susu UHT Full Cream",
         harga: 'Rp.6000',
-        isChecked: false,
-	gambar : require('./assets/gambar/fullcream.jpg')
+	      gambar : require('../assets/gambar/fullcream.jpg')
       },
     ],
   }
 ];
 
+const ListItem = ({ item, onPress, backgroundColor, textColor }) => {
+  return (
+  <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
+    <Image source={item.gambar} style={styles.logo}/>
+    <Text style={[styles.makanan, textColor]}>{item.text} </Text>
+    <Text style={[styles.harga1, textColor]}>{item.harga}</Text>
+  </TouchableOpacity>
+  );
+};
 
 const Pesan2 = ({navigation}) => {
+	const [selectedId, setSelectedId] = useState(null);
+
+  const renderItem = ({ item }) => {
+    const backgroundColor = item.id === selectedId ? "#875749" : "#99d1d8";
+    const color = item.id === selectedId ? '#99d1d8' : '#875749';
+
+    return (
+      <ListItem
+        item={item}
+        onPress={() => setSelectedId(item.id)}
+        backgroundColor={{ backgroundColor }}
+        textColor={{ color }}
+        
+      />
+    );
+  };
   return (
     <View style={styles.container}>
       <View style={styles.atas}>
