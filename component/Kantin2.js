@@ -119,7 +119,29 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Constants.statusBarHeight,
-    backgroundColor: '#ecf0f1',
+  },
+  item: {
+    width: '100%',
+    height: 60,
+    justifyContent:'space-between',
+    alignItems: 'center',
+    flexDirection:'row',
+    position: 'relative',
+    alignSelf: 'center',
+    marginTop:15,
+    borderWidth:1,
+    borderColor:'gray'
+  },
+  scrolling: {
+    marginBottom:10
+  },
+  logo: {
+    height:50,
+    width:50,
+    marginLeft:10
+  },
+  harga1:{
+    marginRight:10
   },
   atas: {
     height: 54,
@@ -134,54 +156,24 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     fontSize: 20
   },
-  makanan: {
-    alignItems: "center",
-    backgroundColor: "#99d1d8",
-    width: '90%',
-    height: 60,
-    justifyContent:'center',
-    position: 'relative',
-    top:20,
-    left:10,
-    marginTop:15   
-  },
   makan: {
     position: 'relative',
-    top:20,
-    left: 10
-  },
-  minuman: {
-    alignItems: "center",
-    backgroundColor: "#99d1d8",
-    width: '90%',
-    height: 60,
-    justifyContent:'center',
-    position: 'relative',
-    top:20,
-    left:10,
-    marginTop:15   
-  },
-  minum: {
-    position: 'relative',
-    top:20,
     left: 10,
-    marginTop:20
+    marginTop:10
   },
   pesanan: {
     alignItems: "center",
     backgroundColor: "#875749",
-    width: '100%',
+    width: '95%',
     height: 40,
+    borderRadius: 30,
+    alignSelf:'center',
     justifyContent:'center',
-    position: 'relative',
-    top:40,
-    borderRadius:50  
+    marginBottom:10,
   },
   pesan: {
     color: '#ecf0f1'
   }
-
-
 });
 
 export default Pesan2;
