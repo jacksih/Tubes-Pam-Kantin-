@@ -14,14 +14,14 @@ const DATA = [
         text: "Bakso Goreng",
         harga: 'Rp.5000',
         isChecked: false,
-        gambar: require('./assets/gambar/baksogoreng.jpg')
+        gambar: require('../assets/gambar/baksogoreng.jpg')
       },
       {
         id: "2",
         text: "Nasi Goreng",
         harga: 'Rp.10000',
         isChecked: false,
-        gambar: require('./assets/gambar/nasigoreng.jpg')
+        gambar: require('../assets/gambar/nasigoreng.jpg')
       },
 
       {
@@ -29,21 +29,21 @@ const DATA = [
         text: "Tahu Goreng",
         harga: 'Rp.5000',
         isChecked: false,
-        gambar: require('./assets/gambar/TahuGoreng.jpg')
+        gambar: require('../assets/gambar/TahuGoreng.jpg')
       },
       {
         id: "4",
         text: "Donut",
         harga: 'Rp.2000',
         isChecked: false,
-        gambar: require('./assets/gambar/Donut.jpg')
+        gambar: require('../assets/gambar/Donut.jpg')
       },
       {
         id: "5",
         text: "Mie Goreng",
         harga: 'Rp.5000',
         isChecked: false,
-        gambar: require('./assets/gambar/MieGoreng.jpg')
+        gambar: require('../assets/gambar/MieGoreng.jpg')
       },
     ],
   },
@@ -55,14 +55,14 @@ const DATA = [
         text: "Aqua Botol",
         harga: 'Rp.4000',
         isChecked: false,
-        gambar: require('./assets/gambar/AquaBotol.jpg')
+        gambar: require('../assets/gambar/AquaBotol.jpg')
       },
       {
         id: "7",
         text: "Aqua Gelas",
         harga: 'Rp.1000',
         isChecked: false,
-        gambar: require('./assets/gambar/AquaGelas.jpg')
+        gambar: require('../assets/gambar/AquaGelas.jpg')
       },
 
       {
@@ -70,25 +70,35 @@ const DATA = [
         text: "Teh Pucuk Harum",
         harga: 'Rp.5000',
         isChecked: false,
-        gambar: require('./assets/gambar/TehPucukHarum.jpg')
+        gambar: require('../assets/gambar/TehPucukHarum.jpg')
       },
       {
         id: "9",
         text: "Teh Kotak",
         harga: 'Rp.5000',
         isChecked: false,
-        gambar: require('./assets/gambar/TehKotak.jpg')
+        gambar: require('../assets/gambar/TehKotak.jpg')
       },
       {
         id: "10",
         text: "Fruit Tea",
         harga: 'Rp.5000',
         isChecked: false,
-        gambar: require('./assets/gambar/FruitTea.jpg')
+        gambar: require('../assets/gambar/FruitTea.jpg')
       },
     ],
   }
 ];
+
+const ListItem = ({ item, onPress, backgroundColor, textColor }) => {
+  return (
+  <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
+    <Image source={item.gambar} style={styles.logo}/>
+    <Text style={[styles.makanan, textColor]}>{item.text} </Text>
+    <Text style={[styles.harga1, textColor]}>{item.harga}</Text>
+  </TouchableOpacity>
+  );
+};
 
 const Pesan1 = ({navigation}) => {
   const [selectedId, setSelectedId] = useState(DATA);
@@ -108,17 +118,6 @@ const Pesan1 = ({navigation}) => {
       />
     );
   };
-
-  const ListItem = ({ item, onPress, backgroundColor, textColor, select, selected}) => {
-  return (
-  <TouchableOpacity onPress={onPress} style={[styles.item, backgroundColor]}>
-    <Image source={item.gambar} style={styles.logo}/>
-    <Text style={[styles.makanan, textColor]}>{item.text} </Text>
-    <Text style={[styles.harga1, textColor]}>{item.harga}</Text>
-    <CheckBox value={select} onValueChange={selected}/>
-  </TouchableOpacity>
-  );
-};
 
   return(
   <View style={styles.container}>
