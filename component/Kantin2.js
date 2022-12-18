@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Text, View, StyleSheet,Image,TouchableOpacity,TextInput } from 'react-native';
+import React, { useState } from "react";
+import { StyleSheet, Text, View, SafeAreaView, SectionList, StatusBar,Image,TouchableOpacity,ScrollView, CheckBox} from "react-native";
 import Constants from 'expo-constants';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native';
@@ -12,14 +12,14 @@ const DATA = [
         text: "Chitato Lite",
         harga: 'Rp.3000',
         isChecked: false,
-	      gambar : require('./assets/gambar/ChitatoLite.jpg')
+	gambar : require('./assets/gambar/ChitatoLite.jpg')
       },
       {
         id: "2",
         text: "Oreo",
         harga: 'Rp.3000',
         isChecked: false,
-	      gambar : require('./assets/gambar/Oreo.jpg')
+	gambar : require('./assets/gambar/Oreo.jpg')
       },
 
       {
@@ -27,21 +27,21 @@ const DATA = [
         text: "Sukro",
         harga: 'Rp.7000',
         isChecked: false,
-	      gambar : require('./assets/gambar/Sukro.jpg')
+	gambar : require('./assets/gambar/Sukro.jpg')
       },
       {
         id: "4",
         text: "Nabati Richoco Wafer",
         harga: 'Rp.7000',
         isChecked: false,
-	      gambar : require('./assets/gambar/richoco.jpg')
+	gambar : require('./assets/gambar/richoco.jpg')
       },
       {
         id: "5",
         text: "Nabati Richeese Wafer",
         harga: 'Rp.7000',
         isChecked: false,
-	      gambar : require('./assets/gambar/richeese.jpg')
+	gambar : require('./assets/gambar/richeese.jpg')
       },
     ],
   },
@@ -53,14 +53,14 @@ const DATA = [
         text: "Nu Green Tea",
         harga: 'Rp.4000',
         isChecked: false,
-	      gambar : require('./assets/gambar/greentea.jpg')
+	gambar : require('./assets/gambar/greentea.jpg')
       },
       {
         id: "7",
         text: "Teh Pucuk Harum",
         harga: 'Rp.4000',
         isChecked: false,
-	      gambar : require('./assets/gambar/TehPucukHarum.jpg')
+	gambar : require('./assets/gambar/TehPucukHarum.jpg')
       },
 
       {
@@ -68,21 +68,21 @@ const DATA = [
         text: "Susu UHT Chocolate",
         harga: 'Rp.6000',
         isChecked: false,
-	      gambar : require('./assets/gambar/chocolate.jpg')
+	gambar : require('./assets/gambar/chocolate.jpg')
       },
       {
         id: "9",
         text: "Susu UHT Strawberry",
         harga: 'Rp.6000',
         isChecked: false,
-	      gambar : require('./assets/gambar/strawberry.jpg')
+	gambar : require('./assets/gambar/strawberry.jpg')
       },
       {
         id: "10",
         text: "Susu UHT Full Cream",
         harga: 'Rp.6000',
         isChecked: false,
-	      gambar : require('./assets/gambar/fullcream.jpg')
+	gambar : require('./assets/gambar/fullcream.jpg')
       },
     ],
   }
