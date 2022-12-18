@@ -13,32 +13,37 @@ const DATA = [
         id: "1",
         text: "Bakso Goreng",
         harga: 'Rp.5000',
-        isChecked: false
+        isChecked: false,
+        gambar: require('./assets/gambar/baksogoreng.jpg')
       },
       {
         id: "2",
         text: "Nasi Goreng",
         harga: 'Rp.10000',
-        isChecked: false
+        isChecked: false,
+        gambar: require('./assets/gambar/nasigoreng.jpg')
       },
 
       {
         id: "3",
         text: "Tahu Goreng",
         harga: 'Rp.5000',
-        isChecked: false
+        isChecked: false,
+        gambar: require('./assets/gambar/TahuGoreng.jpg')
       },
       {
         id: "4",
         text: "Donut",
         harga: 'Rp.2000',
-        isChecked: false
+        isChecked: false,
+        gambar: require('./assets/gambar/Donut.jpg')
       },
       {
         id: "5",
         text: "Mie Goreng",
         harga: 'Rp.5000',
-        isChecked: false
+        isChecked: false,
+        gambar: require('./assets/gambar/MieGoreng.jpg')
       },
     ],
   },
@@ -49,32 +54,37 @@ const DATA = [
         id: "6",
         text: "Aqua Botol",
         harga: 'Rp.4000',
-        isChecked: false
+        isChecked: false,
+        gambar: require('./assets/gambar/AquaBotol.jpg')
       },
       {
         id: "7",
         text: "Aqua Gelas",
         harga: 'Rp.1000',
-        isChecked: false
+        isChecked: false,
+        gambar: require('./assets/gambar/AquaGelas.jpg')
       },
 
       {
         id: "8",
         text: "Teh Pucuk Harum",
         harga: 'Rp.5000',
-        isChecked: false
+        isChecked: false,
+        gambar: require('./assets/gambar/TehPucukHarum.jpg')
       },
       {
         id: "9",
         text: "Teh Kotak",
         harga: 'Rp.5000',
-        isChecked: false
+        isChecked: false,
+        gambar: require('./assets/gambar/TehKotak.jpg')
       },
       {
         id: "10",
         text: "Fruit Tea",
         harga: 'Rp.5000',
-        isChecked: false
+        isChecked: false,
+        gambar: require('./assets/gambar/FruitTea.jpg')
       },
     ],
   }
