@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "Kantin Itera",
-    "slug": "Kantin Itera",
+    "name": "Kantin-Itera",
+    "slug": "Kantin-Itera",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/gambar/icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/gambar/icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -24,10 +24,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.jackmorgan.KantinItera"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f1ca1c4c-9559-4925-ac22-7c479b980391"
+      }
     }
   }
 }
